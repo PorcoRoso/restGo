@@ -1,0 +1,29 @@
+runmode: debug                 # 开发模式, debug, release, test
+addr: :8888                  # HTTP绑定端口
+name: apiserver              # API Server的名字
+url: http://127.0.0.1:8888   # pingServer函数请求的API服务器的ip:port
+max_ping_count: 10           # pingServer函数try的次数
+jwt_secret: RT9uugjjfja738XJH8777hh8OYsu72134agte7xjjklsairu72455hhakgalh48332ee
+tls:
+  addr: :8889
+  cert: conf/server.crt
+  key: conf/server.key
+log:
+  writers: file,stdout
+  logger_level: DEBUG
+  logger_file: log/apiserver.log
+  log_format_text: false
+  rollingPolicy: size
+  log_rotate_date: 1
+  log_rotate_size: 1
+  log_backup_count: 7
+db:
+  name: restGo
+  addr: 172.18.68.106:2059
+  username: cup_ethj
+  password: Eth_2017
+docker_db:
+  name: restGo
+  addr: 127.0.0.1:3306
+  username: cup_ethj
+  password: Eth_2017
